@@ -1,6 +1,4 @@
 import cv2
-from pygments.formatters import img
-
 
 def edgeDetection(imgname, imgpath):
     imgload = cv2.imread(imgpath, cv2.IMREAD_GRAYSCALE)
