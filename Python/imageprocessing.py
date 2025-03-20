@@ -9,6 +9,6 @@ def grayscale(imgpath):
     gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     return gray_image
 
-grayscale("Figures/3D.png")
-grayscale("Figures/2D.png")
+grayscale(r"Figures\3D.png")
+grayscale(r"Figures\2D.png")
 
