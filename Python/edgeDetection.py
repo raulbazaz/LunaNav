@@ -1,8 +1,11 @@
 import cv2
+from pygments.formatters import img
+
 
 def edgeDetection(imgname, imgpath):
-    clahe = cv2.imread(imgpath, cv2.IMREAD_GRAYSCALE)
-    edgeDetection = cv2.Canny(clahe,50,150)
+    imgload = cv2.imread(imgpath, cv2.IMREAD_GRAYSCALE)
+    blurred = cv2.GaussianBlur(imgload,(5,5), 0)
+    edgeDetection = cv2.Canny(blurred,50,150)
     cv2.imwrite(f"{imgname}_edgeDet.png", edgeDetection)
     return edgeDetection
 
