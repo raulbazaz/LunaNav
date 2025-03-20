@@ -3,9 +3,12 @@ import matplotlib.pyplot as plt
 import pandas
 import cv2
 
-img_3D = "Figures/3D.png"
-img_2D = "Figures/2D.png"
+def grayscale(imgpath):
+    img = cv2.imread(imgpath)
+    cv2.imshow('Original', img)
+    gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    return gray_image
 
-img_3D_read = cv2.imread(img_3D)
-img_2D = cv2.imread(img_2D)
+grayscale("Figures/3D.png")
+grayscale("Figures/2D.png")
 
