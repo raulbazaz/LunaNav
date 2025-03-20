@@ -14,19 +14,18 @@ def thresholding(imgname, imgpath):
     cv2.imwrite(f"{imgname}_thresh.png", thresh)
     return thresh
 
-
-# thresholding('2D', '2D_edgeDet.png')
-# thresholding('3D', '3D_edgeDet.png')
-
 def cleanNoise(imgname, imgpath):
     imgload = cv2.imread(imgpath, cv2.IMREAD_GRAYSCALE)
     kernel = np.ones((3, 3), np.uint8)
     cleaned = cv2.morphologyEx(imgload, cv2.MORPH_CLOSE, kernel, iterations=2)
+    cleaned_final = cv2.morphologyEx(cleaned, cv2.MORPH_OPEN, kernel, iterations=1)
+    cv2.imwrite(f"{imgname}_cleaned_final.png", cleaned_final)
     cv2.imwrite(f"{imgname}_cleaned.png", cleaned)
     return cleaned
 
 cleanNoise('2D', '2D_thresh.png')
 cleanNoise('3D', '3D_thresh.png')
+
 
 
 
