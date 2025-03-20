@@ -1,4 +1,3 @@
-import clahe
 import cv2
 
 

@@ -1,6 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas
 import cv2
 
 def grayscale(imgname, imgpath):
