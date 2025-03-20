@@ -1,10 +1,13 @@
 import cv2
 
-def grayscale(imgname, imgpath):
-    img = cv2.imread(imgpath)
-    gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    cv2.imwrite(f"{imgname}_grayscaled.png", gray_image)
-    return gray_image
+def edgeDetection(imgname, imgpath):
+    imgload = cv2.imread(imgpath, cv2.IMREAD_GRAYSCALE)
+    blurred = cv2.GaussianBlur(imgload,(5,5), 0)
+    edgeDetection = cv2.Canny(blurred,50,150)
+    cv2.imwrite(f"{imgname}_edgeDet.png", edgeDetection)
+    return edgeDetection
 
-grayscale('2D', 'Figures/2D.png')
-grayscale('3D', 'Figures/3D.png')
+edgeDetection("2D", '2D_Clahe.png')
+edgeDetection("3D", '3D_Clahe.png')
+
+
