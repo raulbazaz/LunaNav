@@ -11,6 +11,3 @@ def grayscale(imgname, imgpath):
 
 grayscale('2D', 'Figures/2D.png')
 grayscale('3D', 'Figures/3D.png')
-
-
-
