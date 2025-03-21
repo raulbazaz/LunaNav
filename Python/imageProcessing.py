@@ -29,7 +29,3 @@ cleanNoise('3D', '3D_thresh.png')
 
 
 
-
-
-
-
