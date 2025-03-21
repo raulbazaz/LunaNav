@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 
 
-processed_image = cv2.imread("3D_cleaned_final.png", cv2.IMREAD_GRAYSCALE)
-original_image = cv2.imread("Figures/3D.png")
+processed_image = cv2.imread("2D_cleaned_final.png", cv2.IMREAD_GRAYSCALE)
+original_image = cv2.imread("Figures/2D.png")
 
 
 MOVES = [
@@ -70,4 +70,5 @@ cv2.circle(original_image, (goal[1], goal[0]), 7, (255, 0, 0), -1)
 
 plt.imshow(cv2.cvtColor(original_image, cv2.COLOR_BGR2RGB))
 plt.axis("off")
+plt.savefig('Output/2D.png')
 plt.show()
