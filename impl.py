@@ -9,11 +9,11 @@ processed_image = cv2.imread("2D_cleaned_final.png", cv2.IMREAD_GRAYSCALE)
 original_image = cv2.imread("Figures/2D.png")
 
 
+
 MOVES = [
     (-1, 0, 1), (1, 0, 1), (0, -1, 1), (0, 1, 1),
     (-1, -1, 1.41), (-1, 1, 1.41), (1, -1, 1.41), (1, 1, 1.41)
 ]
-
 def dijkstra(image, start, goal):
 
     h, w = image.shape
